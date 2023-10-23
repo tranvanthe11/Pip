@@ -1,0 +1,53 @@
+// const [avatarURL, setAvatarURL] = useState();
+// const [avatarUpload, setAvatarUpload] = useState()
+// const car_types = useSelector(state => state.carTypes)
+
+// const handleUploadAvatar = (e) => {
+//     const formData = new FormData()
+//     formData.append(
+//         'customer_avatar',
+//         e.file,
+//         e.file.name
+//     )
+//     updateAvatar(match.params.id, formData, (res) => {
+//         if (res.status === 1) {
+//             setAvatarURL(res.data.path)
+//             notification.success({
+//                 message: t(`Notification`),
+//                 description: `Avatar upload successful!`,
+//                 placement: `bottomRight`,
+//                 duration: 1.5,
+//             });
+//         } else {
+//             notification.error({
+//                 message: t(`Notification`),
+//                 description: `Avatar upload failed!`,
+//                 placement: `bottomRight`,
+//                 duration: 1.5,
+//             });
+//         }
+//     })
+// }
+
+// const beforeUpload = (file) => {
+//     const isJPG = file.type === 'image/jpeg';
+//     const isPNG = file.type === 'image/jpeg';
+//     const isLt5M = file.size / 1024 / 1024 < 5;
+//     if (!isJPG && !isPNG) {
+//         notification.warning({
+//             message: t(`Notification`),
+//             description: `You can only upload JPG or PNG file!`,
+//             placement: `bottomRight`,
+//             duration: 3.5,
+//         });
+//     }
+//     if (!isLt5M) {
+//         notification.warning({
+//             message: t(`Notification`),
+//             description: `Image must smaller than 5MB!`,
+//             placement: `bottomRight`,
+//             duration: 3.5,
+//         });
+//     }
+//     return (isJPG || isPNG) && isLt5M
+// }
