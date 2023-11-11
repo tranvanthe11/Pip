@@ -35,6 +35,9 @@ const OrderDetail = React.lazy(() =>
   import("./views/order/order_detail/OrderDetail")
 );
 // const ListCars = React.lazy(() => import('./views/hostCar/ListCar'));
+const AddVoucher = React.lazy(() => import("./views/vouchers/AddVoucher"));
+const ListVouchers = React.lazy(() => import("./views/vouchers/ListVouchers"));
+const VoucherDetail = React.lazy(() => import("./views/vouchers/VoucherDetail"));
 const ListDrivers = React.lazy(() => import("./views/driver/ListDriver"));
 const DriverDetail = React.lazy(() => import("./views/driver/DriverDetail"));
 const AddDriver = React.lazy(() => import("./views/driver/AddDriver"));
@@ -62,7 +65,7 @@ const routes = [
     path: "/dashboard",
     name: "Dashboard",
     component: Dashboard,
-    permission: [Roles.ADMIN, Roles.SALES, Roles.OPERATOR, Roles.ANALYST],
+    permission: [Roles.ADMIN, Roles.SALES, Roles.OPERATOR, Roles.ANALYST,  Roles.MARKETER],
   },
   // Request's route - next phase
   {
@@ -91,21 +94,21 @@ const routes = [
     path: "/contracts",
     name: "List Contracts",
     component: ListContracts,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES, Roles.MARKETER],
     exact: true,
   },
   {
     path: "/contracts/create",
     name: "Add Contract",
     component: CreateContract,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/contracts/:id",
     name: "Contract Detail",
     component: ContractDetail,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   {
@@ -127,70 +130,91 @@ const routes = [
     path: "/drivers",
     name: "Drivers",
     component: ListDrivers,
-    permission: [Roles.SALES, Roles.OPERATOR],
+    permission: [Roles.SALES, Roles.OPERATOR,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/drivers/create",
     name: "Add Driver",
     component: AddDriver,
-    permission: [Roles.SALES, Roles.OPERATOR],
+    permission: [Roles.SALES, Roles.OPERATOR,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/drivers/:id",
     name: "Driver Detail",
     component: DriverDetail,
-    permission: [Roles.SALES, Roles.OPERATOR],
+    permission: [Roles.SALES, Roles.OPERATOR,  Roles.MARKETER],
+    exact: true,
+  },
+  {
+    path: "/vouchers",
+    name: "Vouchers",
+    component: ListVouchers,
+    permission: [Roles.MARKETER],
+    exact: true,
+  },
+  {
+    path: "/vouchers/create",
+    name: "Add Voucher",
+    component: AddVoucher,
+    permission: [Roles.MARKETER],
+    exact: true,
+  },
+  {
+    path: "/vouchers/:id",
+    name: "Voucher Detail",
+    component: VoucherDetail,
+    permission: [Roles.MARKETER],
     exact: true,
   },
   {
     path: "/orders",
     name: "List Orders",
     component: ListOrders,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/orders/:id",
     name: "Order Detail",
     component: OrderDetail,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/order-airports",
     name: "List Order-Airports",
     component: ListOrderAirports,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/order-airports/:id",
     name: "Order-Airport Detail",
     component: OrderAirportDetail,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/customers",
     name: "Customers",
     component: ListCustomers,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/customers/create",
     name: "Add Customer",
     component: AddCustomer,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   {
     path: "/customers/:id",
     name: "Customer Detail",
     component: CustomerDetail,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
   // User's route
@@ -198,7 +222,7 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: Profile,
-    permission: [Roles.SALES, Roles.ADMIN, Roles.OPERATOR, Roles.ANALYST],
+    permission: [Roles.SALES, Roles.ADMIN, Roles.OPERATOR, Roles.ANALYST,  Roles.MARKETER],
     exact: true,
   },
   // ADMIN's Route
@@ -293,7 +317,7 @@ const routes = [
     path: "/customers/address-label/:id",
     name: "Address label",
     component: AddressLabel,
-    permission: [Roles.SALES],
+    permission: [Roles.SALES,  Roles.MARKETER],
     exact: true,
   },
 ];

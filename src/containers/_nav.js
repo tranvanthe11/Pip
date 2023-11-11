@@ -17,7 +17,7 @@ const _nav = [
   {
     _tag: "CSidebarNavTitle",
     _children: ["Resources"],
-    permission: [Roles.SALES],
+    permission: [Roles.SALE,  Roles.MARKETERS],
   },
   {
     _tag: "CSidebarNavDropdown",
@@ -56,6 +56,26 @@ const _nav = [
         name: "Add Driver",
         to: "/drivers/create",
         permission: [Roles.SALES, Roles.OPERATOR],
+      },
+    ],
+  },
+  {
+    _tag: "CSidebarNavDropdown",
+    name: "Vouchers",
+    icon: "cil-car-alt",
+    permission: [Roles.MARKETER],
+    _children: [
+      {
+        _tag: "CSidebarNavItem",
+        name: "List Vouchers",
+        to: "/vouchers",
+        permission: [Roles.MARKETER ],
+      },
+      {
+        _tag: "CSidebarNavItem",
+        name: "Add Voucher",
+        to: "/vouchers/create",
+        permission: [ Roles.MARKETER],
       },
     ],
   },

@@ -52,10 +52,10 @@ const AddSale = ({ t }) => {
     };
     console.log(submitData);
     Modal.confirm({
-      title: t(`Create Sale`),
+      title: t(`Create USER`),
       icon: <ExclamationCircleOutlined />,
       content: t(
-        `You are going to create this sale? Are you sure you want to do this? You can't reverse this`
+        `You are going to create this user? Are you sure you want to do this? You can't reverse this`
       ),
       onOk() {
         createUser(submitData, (res) => {
@@ -137,7 +137,7 @@ const AddSale = ({ t }) => {
                   }
                   // disabled
                 >
-                  {[Roles.SALES, Roles.OPERATOR, Roles.ANALYST, Roles.ACCOUNTANT].map((item, index) => (
+                  {[Roles.SALES, Roles.OPERATOR, Roles.ANALYST, Roles.ACCOUNTANT, Roles.MARKETER].map((item, index) => (
                     <Select.Option value={item} key={index}>
                       {item}
                     </Select.Option>

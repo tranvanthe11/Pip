@@ -73,6 +73,8 @@ const Login = ({ t }) => {
             history.push("/users");
           } else if (user.data.role === Roles.SALES) {
             history.push("/contracts");
+          } else if (user.data.role === Roles.MARKETER) {
+            history.push("/contracts");
           } else if (user.data.role === Roles.OPERATOR) {
             history.push("/contracts");
           } else if (user.data.role === Roles.ANALYST) {

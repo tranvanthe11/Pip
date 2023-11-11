@@ -127,6 +127,7 @@ const AddDriver = ({ t }) => {
         ),
         onOk() {
           createDriver(submitData, (res) => {
+            console.log('res.status', res)
             if (res.status === 1) {
               notification.success({
                 message: t(`Notification`),
